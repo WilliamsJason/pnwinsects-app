@@ -170,29 +170,18 @@ PNWMOTHS.Map = function () {
             });
             map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(controlDiv);
         },
-        getCounties: function() {      
-            return new google.maps.FusionTablesLayer({
-              query: {
-                select: 'geometry',
-                from: '3165511'
-              },
-                options : {suppressInfoWindows:true}, 
-              styles: [{
-              markerOptions: {
-                iconName: "transparent"
-              },
-              polygonOptions: {
-                fillColor: "#FFFFFF",
+        getCounties: function() {
+            var dataLayer = new google.maps.Data();
+            dataLayer.loadGeoJson('/media/data/pnw-counties.geojson');
+            dataLayer.setStyle({
+                fillColor: '#FFFFFF',
                 fillOpacity: 0.01,
-                strokeColor: "#FFFFFF",
+                strokeColor: '#FFFFFF',
                 strokeOpacity: 0.5,
-                strokeWeight: "2"
-              },
-              polylineOptions: {
-                strokeColor: "#rrggbb",
-                strokeWeight: "int"  }
-              }]
+                strokeWeight: 2,
+                clickable: false
             });
+            return dataLayer;
         },
         htmlData: null,
         openMarker: function(i){

@@ -47,15 +47,6 @@ jQuery(window).load(function() {
               fillOpacity: .1,
               clickable: false
             });
+    // PNW boundary polygon (decorative overlay)
     polygon.setMap(map);
-
-    // Show all coords from fusion table (needs to be updated on occasion)
-    var allcoords = new google.maps.FusionTablesLayer({
-      query: {
-        select: 'location',
-        from: fusionId
-      },
-      clickable: false
-    });
-    allcoords.setMap(map);
 });
