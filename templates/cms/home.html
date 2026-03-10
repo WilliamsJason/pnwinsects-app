@@ -3,7 +3,7 @@
 
 {% block scripts %}
     {{ block.super }}
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbCPZKErsVyP3VqP67eqGDCXecQEQMejE"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{ MAPS_API_KEY|default:'' }}"></script>
     <script language="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.js"></script>
     <script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}js_pages/home.js"></script>
 {% endblock %}

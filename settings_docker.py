@@ -28,6 +28,7 @@ TEMPLATE_VARIABLES = {
     "GOOGLE_SEARCH": False,
     "ANALYTICS_ID": "",
     "FUSION_ID": "",
+    "MAPS_API_KEY": "",
 }
 
 # Local memory cache (no memcached needed)
